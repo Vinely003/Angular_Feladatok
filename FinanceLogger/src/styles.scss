@@ -1,0 +1,24 @@
+@import "/src/app/app.component.scss";
+
+body {
+    margin: 0 auto;
+    font-family: Roboto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 40px auto;
+    color: $hColor;
+    text-align: center;
+}
+
+@import "/src/app/list/list.component.scss";
+
+@import "/src/app/add/add.component.scss";

@@ -1,0 +1,22 @@
+ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    padding: 6px 10px;
+    border: 1px solid #eee;
+    margin: 10px auto;
+  
+    h4 {
+      color: $hColor;
+      margin: 0;
+      text-transform: capitalize;
+    }
+  
+    p {
+      color: $textColor;
+      margin: 8px 0 0;
+    }
+  }
+  
