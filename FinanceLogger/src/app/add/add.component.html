@@ -1,25 +1,25 @@
 <footer>
-    <form class="new-item-form">
+    <form [formGroup]="finance" (ngSubmit)="updateList()" class="new-item-form">
         <div class="field">
             <label>Type:</label>
-            <select id="type">
+            <select id="type" formControlName="type">
                 <option value="invoice">Invoice</option>
                 <option value="payment">Payment</option>
             </select>
         </div>
         <div class="field">
             <label>To / From:</label>
-            <input type="text" id="tofrom">
+            <input type="text" id="tofrom" formControlName="tofrom">
         </div>
         <div class="field">
             <label>Details:</label>
-            <input type="text" id="details">
+            <input type="text" id="details" formControlName="details">
         </div>
         <div class="field">
             <label>Amount (Ft):</label>
-            <input type="number" id="amount">
+            <input type="number" id="amount" formControlName="amount">
         </div>
-        <button>Add</button>
+        <button type="submit" [disabled]="!finance.valid">Add</button>
     </form>
 
     <a target="_blank" href="https://github.com/Vinely003">Vinely003</a>
