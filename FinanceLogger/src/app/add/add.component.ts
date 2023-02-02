@@ -17,9 +17,9 @@ export class AddComponent {
 
   updateList(): any {
     if (this.finance.value.type === 'invoice') {
-      return `${this.finance.value.tofrom} owes ${this.finance.value.amount} for ${this.finance.value.details}`;
+      return `${this.finance.value.tofrom} owes ${this.finance.value.amount} Ft for ${this.finance.value.details}`;
     } else if (this.finance.value.type === 'payment') {
-      return `Have to pay to ${this.finance.value.tofrom} ${this.finance.value.amount} for ${this.finance.value.details}`;
+      return `Have pay to ${this.finance.value.tofrom} ${this.finance.value.amount} Ft for ${this.finance.value.details}`;
     }
   }
 }

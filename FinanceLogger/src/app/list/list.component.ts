@@ -9,6 +9,6 @@ import { AddComponent } from '../add/add.component';
 export class ListComponent extends AddComponent {
   constructor() {
     super();
-    this.updateList();
+    this.updateList()
   }
 }

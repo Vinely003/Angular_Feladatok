@@ -1,5 +1,5 @@
 <footer>
-    <form [formGroup]="finance" (ngSubmit)="updateList()" class="new-item-form">
+    <form [formGroup]="finance" class="new-item-form">
         <div class="field">
             <label>Type:</label>
             <select id="type" formControlName="type">
@@ -19,8 +19,8 @@
             <label>Amount (Ft):</label>
             <input type="number" id="amount" formControlName="amount">
         </div>
-        <button type="submit" [disabled]="!finance.valid">Add</button>
+        <button type="submit">Add</button>
     </form>
-
+    {{updateList()}}
     <a target="_blank" href="https://github.com/Vinely003">Vinely003</a>
 </footer>
