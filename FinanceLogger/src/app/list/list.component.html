@@ -1,9 +1,15 @@
 <div class="wrapper">
     <h1>Finance Logger</h1>
     <div *ngFor="let formData of formData">
-        <p>Type: {{ formData.type }}</p>
-        <p>To/From: {{ formData.tofrom }}</p>
-        <p>Details: {{ formData.details }}</p>
-        <p>Amount: {{ formData.amount }}</p>
+        <ul>
+            <li class="item-list">
+                <h4>{{ formData.type }}</h4>
+                <p>
+                    {{ formData.tofrom }}
+                    {{ formData.details }}
+                    {{ formData.amount }}
+                </p>
+            </li>
+        </ul>
     </div>
 </div>
