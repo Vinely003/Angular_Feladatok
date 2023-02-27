@@ -2,25 +2,24 @@
     <form [formGroup]="finance" class="new-item-form">
         <div class="field">
             <label>Type:</label>
-            <select id="type" formControlName="type">
+            <select id="type" formControlName="type" required>
                 <option value="invoice">Invoice</option>
                 <option value="payment">Payment</option>
             </select>
         </div>
         <div class="field">
             <label>To / From:</label>
-            <input type="text" id="tofrom" formControlName="tofrom">
+            <input type="text" id="tofrom" formControlName="tofrom" required>
         </div>
         <div class="field">
             <label>Details:</label>
-            <input type="text" id="details" formControlName="details">
+            <input type="text" id="details" formControlName="details" required>
         </div>
         <div class="field">
             <label>Amount (Ft):</label>
-            <input type="number" id="amount" formControlName="amount">
+            <input type="number" id="amount" formControlName="amount" required>
         </div>
-        <button type="submit">Add</button>
+        <button (click)="onSubmit()" type="submit">Add</button>
     </form>
     <a target="_blank" href="https://github.com/Vinely003">Vinely003</a>
 </footer>
-{{finance.value.type}}

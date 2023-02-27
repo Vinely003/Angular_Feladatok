@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
-
 import { FormControl, FormGroup } from '@angular/forms';
+import { DataService } from '../data-service.service';
+import { FormData } from 'src/form-data';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  finance = new FormGroup({
-    type: new FormControl(''),
-    tofrom: new FormControl(''),
-    details: new FormControl(''),
-    amount: new FormControl('')
-  })
-  updateList(): any {
-    if (this.finance.value.type === 'invoice') {
-      return console.warn(`${this.finance.value.tofrom} owes ${this.finance.value.amount} Ft for ${this.finance.value.details}`);
-    } else if (this.finance.value.type === 'payment') {
-      return console.warn(`Have pay to ${this.finance.value.tofrom} ${this.finance.value.amount} Ft for ${this.finance.value.details}`);
-    }
+
+  finance: FormGroup;
+
+  constructor(private dataService: DataService) {
+    this.finance = new FormGroup({
+      type: new FormControl(''),
+      tofrom: new FormControl(''),
+      details: new FormControl(''),
+      amount: new FormControl(''),
+    });
+  }
+
+  onSubmit(): void {
+    const formValue = this.finance.value;
+    const formData = new FormData(formValue.type, formValue.tofrom, formValue.details, formValue.amount);
+    this.dataService.setFormData(formData);
   }
 }

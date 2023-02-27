@@ -8,7 +8,7 @@ footer {
         text-align: center;
         display: block;
         &:hover {
-            color: #999;
+            color: var(--greyColor);
         }
         margin-top: 40px;
         font-size: 0.7em;
@@ -51,6 +51,6 @@ button {
     margin-top: 16px;
     cursor: pointer;
     &:hover {
-        background-color: #999;
+        background-color: var(--greyColor);
     }
 }
