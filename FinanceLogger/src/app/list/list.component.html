@@ -1,15 +1,25 @@
 <div class="wrapper">
     <h1>Finance Logger</h1>
     <div *ngFor="let formData of formData">
-        <ul>
-            <li class="item-list">
-                <h4>{{ formData.type }}</h4>
-                <p>
-                    {{ formData.tofrom }}
-                    {{ formData.details }}
-                    {{ formData.amount }}
-                </p>
-            </li>
-        </ul>
+        <div *ngIf="formData.type === 'invoice'">
+            <ul>
+                <li class="item-list">
+                    <h4>{{ formData.type }}</h4>
+                    <p>
+                        {{ formData.tofrom }} owes ${{ formData.amount }} for {{ formData.details }}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="formData.type === 'payment'">
+            <ul>
+                <li class="item-list">
+                    <h4>{{ formData.type }}</h4>
+                    <p>
+                        Owe {{ formData.tofrom }} ${{ formData.amount }} for {{ formData.details }}
+                    </p>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
