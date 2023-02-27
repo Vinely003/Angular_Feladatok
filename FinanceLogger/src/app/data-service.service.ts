@@ -9,8 +9,6 @@ export class DataService {
 
   setFormData(formData: FormData): void {
     this.formDataList.push(formData);
-    console.log(this.formDataList);
-    console.log(formData);
   }
 
   getFormDataList(): FormData[] {
